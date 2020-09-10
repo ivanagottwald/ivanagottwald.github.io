@@ -1,6 +1,6 @@
-<style>
             .navbar {
-                background-color: #018786;
+                background-color: dimgrey;
+                overflow: hidden;
             }
             .navbar li {
                 list-style-type: none;
@@ -9,13 +9,13 @@
             }
             .navbar a {
                 color: inherit;
-                text-decoration:none;
+                text-decoration: none;
                 font-size: 24px;
                 padding: 16px;
                 display: inline-block;
             }
             .navbar li:hover {
-                background-color:red;
+                background-color:aqua;
             }
 
             .dropdown-content li {
@@ -26,11 +26,12 @@
                 padding: 0px;
                 display: none;
                 position: absolute;
-                background-color: black;
+                background-color: dimgrey;
             }
 
             .dropdown:hover .dropdown-content {
                 display: block;
             }
-
-</style>
+            .navbar .active {
+                background-color: dimgrey;
+            }
