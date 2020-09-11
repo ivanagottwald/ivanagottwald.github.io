@@ -26,7 +26,7 @@
                 color: #c6c6c6;
             }
             body a {
-                color: #018786
+                color: #026e6e
             }
             body {
                 background-color:#262626;
@@ -34,9 +34,6 @@
             ol b li {
                 color: #B00020;
             }
-            .evenRow {
-                background-color:#03DAC6;
-            }
-            .oddRow {
-                background-color:#018786
+            .photorow {
+                background-color: #026e6e
             }
