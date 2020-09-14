@@ -1,3 +1,4 @@
+
             p { 
                 color: #FFFFFF; 
                 font-size:15px;
@@ -37,3 +38,10 @@
             .photorow {
                 background-color: #026e6e
             }
+
+           .textwrap {
+                float: left;
+                margin:30px;
+            }
+
+
