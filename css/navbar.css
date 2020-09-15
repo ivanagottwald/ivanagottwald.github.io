@@ -1,11 +1,12 @@
             .navbar {
-                background-color: dimgrey;
+                background-color: #000000;
                 overflow: hidden;
+                color: #D5D8DC;
             }
             .navbar li {
                 list-style-type: none;
                 float: left;
-                color:#000000;
+                color: #D5D8DC;
             }
             .navbar a {
                 color: inherit;
@@ -15,7 +16,7 @@
                 display: inline-block;
             }
             .navbar li:hover {
-                background-color:aqua;
+                background-color:#9C0202;
             }
 
             .dropdown-content li {
@@ -26,13 +27,13 @@
                 padding: 0px;
                 display: none;
                 position: absolute;
-                background-color: dimgrey;
+                background-color: #000000;
             }
 
             .dropdown:hover .dropdown-content {
                 display: block;
             }
             .navbar .active{
-                background-color: aqua;
+                background-color: #9C0202;
             }
             
