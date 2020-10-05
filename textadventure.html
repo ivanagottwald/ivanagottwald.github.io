@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>About Me</title>
-        <link rel="stylesheet" type="text/css" href="css/navbar.css" />
+        <title>Text Adventure</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
-    <body>
+    <body class="background">
+        <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="contactme.html">Contact Me</a></li>
-            <li class="active"><a href="aboutme.html">About Me</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
             <li class="dropdown">
                 <a href="#">Projects</a>
                 <ul class="dropdown-content">
-                    <li><a href="textadventure.html">Text Adventure</a></li>
+                    <li class="active">><a href="textadventure.html">Text Adventure</a></li>
                     <li><a href="#">Project 2</a></li>
                     <li><a href="#">Project 3</a></li>
                     <li><a href="#">Project 4</a></li>
@@ -22,30 +22,103 @@
                 </ul>
             </li>
         </ul>
+    </body>
 
-<style>
-    #container {
-        position: absolute;
-        lell: 6 px;
-        right: 0px;
-        top: 98px;
-        button: 0px:
-        background-color: red;
-    }
-    #leftpane {
-        background-color:green;
-        height:100%;
-        width: 50%;
-    }
+    <style>
+        #container {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 90px;
+            bottom: 0px;
+            background-color: maroon;
+        }
+        #left_pane {
+            background-color:navy;
+            height:100%;
+            width: 56%;
+            float:left;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        #rightpane{
+            background-color:blue;
+            height:100%;
+            width:44%;
+            float:left;
+        }
+        #story_text {
+            background-color:yellow;
+            height:80%;
+        }
+        #button_choices {
+            background-color:gray;
+            height:20px;
+            color:red;
+            font:bold;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        #story_ing {
+            max-height:97%;
+            max-width:100%;
+            width:auto;
+            height:auto;
+        }
+        .buttons {
+            text-decoration: none;
+            color:white;
+            background-color:black;
+            padding:10px;
+            border-radius:8px;
+            font-size:25px;
+            margin:10px;
+        }
+    </style>
+    <div id="container">
+        <div id="left_pane">
+            <img id="story_ing"src="images/cococola_.jpg"/>
+        </div>
+        <div id="right_pane">
+            <div id="storyte_text">
+                <p id="p1">You wake up after falling asleep in the comfort 
+of your home on Alcatraz Island, where you're forced 
+to depart the cruise ship that brought you here.</p>
+                <p id="p2">You see a strangely familiar boy, Tommy</p>
+                <p id="p3">Would you like to follow Tommy?</p>
+            </div>
+            <div id="button_choices">
+                <a class="buttons" href="" onclick="bclick(1)">Yes</a>
+                <a class="buttons" href="" onclick="bclick(2)">No</a>
+                <a class="buttons" href="" onclick="bclick(3)">Maybe</a>
+            </div>
+        </div>
+    </div>
 
-    #rightpane{
-        background-color:blue;
-        height:100%;
-        width:44%;
-        float:left;
-    }
+<script>
+    var b1 = document.getElementById("b1");
+    var b2 = document.getElementById("b2");
+    var b3 = document.getElementById("b3");
+    var b4 = document.getElementById("b4");
+    var image = document.getElementById("story_img")
+    var p1 = document.getElementById("p1");
+    var p2 = document.getElementById("p2");
+    var p3 = document.getElementById("p3");
+    var state = "intro";
 
-    
-</style>
+    function intro()(
+        imgsrc = "images/people.jpg";
+        b1innerHTML = "Stay in School";
+        b2innerHTML = "go to camp";
+        b3styledisplay = "none";
+        b4styledisplay = "none";
+        p1innerHTML = "Welcome to my adventure.";
+        p2innerHTML = "Question";
+        
+    )
 
-<div id="container"
+</script>
+    </body>
+</html>
