@@ -77,6 +77,7 @@
             margin:10px;
         }
     </style>
+
     <div id="container">
         <div id="left_pane">
             <img id="story_ing"src="images/cococola_.jpg"/>
@@ -84,8 +85,8 @@
         <div id="right_pane">
             <div id="storyte_text">
                 <p id="p1">You wake up after falling asleep in the comfort 
-of your home on Alcatraz Island, where you're forced 
-to depart the cruise ship that brought you here.</p>
+                of your home on Alcatraz Island, where you're forced 
+                to depart the cruise ship that brought you here.</p>
                 <p id="p2">You see a strangely familiar boy, Tommy</p>
                 <p id="p3">Would you like to follow Tommy?</p>
             </div>
@@ -116,9 +117,35 @@ to depart the cruise ship that brought you here.</p>
         b4styledisplay = "none";
         p1innerHTML = "Welcome to my adventure.";
         p2innerHTML = "Question";
-        
+    )
+    function stayInSchool()(
+        imgsrc="images/school.jpg";
+        p1innerHTML = "You follow Tommy into a dark hallway where you see a lonely piece of paper laying on the floor."
+        p2innerHTML = ""
+        b1innerHTML = "Yes";
+        b2innetHTML = "No":
     )
 
+    ////// State Machine
+    function bclick(button)(
+        if (state == "intro")(
+            if(button == 1)(
+                gotohallway();
+                state="stayInSchool";
+            )
+            else if(button == 2)(
+                goToCamp();
+                state = "goToCamp";
+            )
+        )
+        else if(state == "stayInSchool")(
+            if (button == 1)(
+                escape();
+                state = "intensiveTraining";
+            )
+        )
+    )
 </script>
     </body>
 </html>
+
