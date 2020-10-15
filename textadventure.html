@@ -34,7 +34,7 @@
             background-color: #152238;
         }
         #left_pane {
-            background-color:#333333;
+            background-color:#00121A;
             height:100%;
             width: 56%;
             float:left;
@@ -42,26 +42,25 @@
             align-items:center;
             justify-content:center;
         }
-        #rightpane{
-            background-color:blue;
+        #right_pane{
+            background-color:#00121A;
             height:100%;
             width:44%;
             float:left;
         }
         #story_text {
-            background-color:yellow;
+            text-align: center;
+            color:;
             height:80%;
         }
         #button_choices {
-            background-color:gray;
-            height:20px;
-            color:red;
+            height:20%;
             font:bold;
             display:flex;
             align-items:center;
             justify-content:center;
         }
-        #story_ing {
+        #story_img {
             max-height:97%;
             max-width:100%;
             width:auto;
@@ -80,15 +79,17 @@
 
     <div id="container">
         <div id="left_pane">
-            <img id="story_img"src="images/alcatrazatnight.jpeg" />
+            <img id="story_img"src="images/alcatrazatnight.jpeg"/>
         </div>
         <div id="right_pane">
             <div id="story_text">
-                <p id="p1">You wake up after falling asleep in the comfort 
-                of your home on Alcatraz Island, where you're forced 
-                to depart the cruise ship that brought you here.</p>
-                <p id="p2">You see a strangely familiar boy, Tommy</p>
-                <p id="p3">Would you like to follow Tommy?</p>
+                <br>
+                <p id="p1"><b>ESCAPE FROM ALCATRAZ</b></p>
+                <br>
+                <p id="p2">Your name is Addilyn. The year is 1987. You fell asleep safe and 
+                sound in your bedroom late one night, only to wake up on the deck of an empty 
+                cruise ship amidst the boarding of Alcatraz Island -- Alcatraz Federal Penitentiary.</p>
+                <p id="p3"><b>ARE YOU READY TO ESCAPE?</b></p>
             </div>
             <div id="button_choices">
                 <a id="b1" class="buttons" href="" onclick="bclick(1)">Yes</a>
@@ -102,51 +103,37 @@
         var b1 = document.getElementById("b1");
         var b2 = document.getElementById("b2");
         var b3 = document.getElementById("b3");
-        var b4 = document.getElementById("b4");
-        var img = document.getElementById("story_img")
+        var img = document.getElementById("story_img");
         var p1 = document.getElementById("p1");
         var p2 = document.getElementById("p2");
         var p3 = document.getElementById("p3");
         var state = "intro";
-    //call image like "intro();"
+        intro();
 
-        function intro()(
-            imgsrc = "images/people.jpg";
-            b1innerHTML = "Stay in School";
-            b2innerHTML = "go to camp";
-            b3styledisplay = "none";
-            b4styledisplay = "none";
-            p1innerHTML = "Welcome to my adventure.";
-            p2innerHTML = "Question";
-        )
-        function stayInSchool()(
-            imgsrc="images/school.jpg";
-            p1innerHTML = "You follow Tommy into a dark hallway where you see a lonely piece of paper laying on the floor."
-            p2innerHTML = ""
-            b1innerHTML = "Yes";
-            b2innetHTML = "No":
-        )
+        function intro() {
+            img.src = "images/addilyn.jpg";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b3.style.display = "none";
+            p1.innerHTML = "Welcome";
+            p2.innerHTML = "Question";
+            p3.style.display = "none";
+        }
 
-    // State Machine
-    function bclick(button)(
-        if (state == "intro")(
-            if(button == 1)(
-                gotohallway();
-                state="stayInSchool";
-            )
-            else if(button == 2)(
-                goToCamp();
-                state = "goToCamp";
-            )
-        )
-        else if(state == "stayInSchool")(
-            if (button == 1)(
-                escape();
-                state = "intensiveTraining";
-            )
-        )
-    )
-</script>
-    </body>
+        function followTommy() {
+            img.src = "images/tommy.jpeg";
+        }
+
+        // State Machine
+        function bclick(button) {
+            if (state == "intro") {
+                if (button == 1) {
+                    followTommy();
+                    state="followTommy";
+                }
+            }
+        }
+
+    </script>
 </html>
 
