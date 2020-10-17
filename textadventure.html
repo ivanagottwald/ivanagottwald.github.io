@@ -14,7 +14,7 @@
             <li class="dropdown">
                 <a href="#">Projects</a>
                 <ul class="dropdown-content">
-                    <li class="active">><a href="textadventure.html">Text Adventure</a></li>
+                    <li class="active">><a href="textadventure.html"> Text Adventure</a></li>
                     <li><a href="#">Project 2</a></li>
                     <li><a href="#">Project 3</a></li>
                     <li><a href="#">Project 4</a></li>
@@ -70,10 +70,10 @@
             text-decoration: none;
             color:white;
             background-color:black;
-            padding:10px;
-            border-radius:8px;
-            font-size:25px;
-            margin:10px;
+            padding:8px;
+            border-radius:6px;
+            font-size:20px;
+            margin:8px;
         }
     </style>
 
@@ -89,12 +89,13 @@
                 <p id="p2">Your name is Addilyn. The year is 1987. You fell asleep safe and 
                 sound in your bedroom late one night, only to wake up on the deck of an empty 
                 cruise ship amidst the boarding of Alcatraz Island -- Alcatraz Federal Penitentiary.</p>
+                <br>
                 <p id="p3"><b>ARE YOU READY TO ESCAPE?</b></p>
             </div>
             <div id="button_choices">
-                <a id="b1" class="buttons" href="" onclick="bclick(1)">Yes</a>
-                <a id="b2" class="buttons" href="" onclick="bclick(2)">No</a>
-                <a id="b3" class="buttons" href="" onclick="bclick(3)">Maybe</a>
+                <a id="b1" class="buttons" href="#" onclick="bclick(1)">Yes</a>
+                <a id="b2" class="buttons" href="#" onclick="bclick(2)">No</a>
+                <a id="b3" class="buttons" href="#" onclick="bclick(3)">no</a>
             </div>
         </div>
     </div>
@@ -110,28 +111,60 @@
         var state = "intro";
         intro();
 
-        function intro() {
-            img.src = "images/addilyn.jpg";
+        function intro(){
+            img.src = "images/alcatrazatnight.jpeg";
+            p1.innerHTML = "ESCAPE FROM ALCATRAZ";
+            p2.innerHTML = "Your name is Addilyn. The year is 1987. You fell asleep safe and sound in your bedroom late one night, only to wake up on the deck of an empty cruise ship amidst the boarding of Alcatraz Island -- Alcatraz Federal Penitentiary.";
+            p3.innerHTML = "ARE YOU READY TO ESCAPE?";
             b1.innerHTML = "Yes";
-            b2.innerHTML = "No";
+            b2.style.display = "none";
             b3.style.display = "none";
-            p1.innerHTML = "Welcome";
-            p2.innerHTML = "Question";
-            p3.style.display = "none";
         }
 
-        function followTommy() {
+        function followTommy(){
             img.src = "images/tommy.jpeg";
+            p1.innerHTML = "Your teeth chatter while you begin to shiver as cold winds send chills up your spine. It's cold. You open your eyes and see a strangely familiar boy named Tommy. ";
+            p2.innerHTML = "Would you like to follow Tommy?";
+            p3.style.display = "none";
+            b1.innerHTML = "Yes, I don't know where I am.";
+            b2.innerHTML = "No, I'd rather look around the island myself.";
+        }
+
+        function dontFollowTommy(){
+            img.src ="images/forest.jpeg";
+            p1.innerHTML = "You saw a building did not know how to get in. You managed to search around some more but it got so cold you couldn't even walk.";
+            p2.innerHTML = "You froze to death while searching for the entrance to the building.";
+            p2.innerHTML = "";
+            b1.innerHTML = "Restart";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+        }
+
+        function (){
+            img.src ="";
+            p1.innerHTML = "";
+            p2.innerHTML = "";
+            p2.innerHTML = "";
+            b1.innerHTML = "";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
         }
 
         // State Machine
-        function bclick(button) {
-            if (state == "intro") {
-                if (button == 1) {
+        function bclick(button){
+            if (state == "intro"){
+                if (button == 1){
                     followTommy();
                     state="followTommy";
                 }
             }
+            else if (state == "followTommy") {
+                if (button == 1){
+                    enterBuilding();
+                    state = "enterBuilding"
+                }
+            }
+
         }
 
     </script>
