@@ -116,7 +116,15 @@
             p3.innerHTML = "ARE YOU READY TO ESCAPE?";
             b1.innerHTML = "Yes";
             b2.style.display = "none";
+        }
 
+        function restart(){
+            img.src.style.display = "none"
+            p1.innerHTML = "";
+            p2.innerHTML = "";
+            p3.innerHTML = "You died and were unable to get back to your family. Restart.";
+            b1.innerHTML = "Restart";
+            b2.style.display = "none"
         }
 
         function followTommy(){
@@ -130,22 +138,12 @@
         }
 
         function dontFollowTommy(){
-            img.src ="images/forest.jpeg";
-            p1.innerHTML = "You saw a building did not know how to get in. You managed to search around some more but it got so cold you couldn't even walk.";
+            img.src = "images/forest.jpeg";
+            p1.innerHTML = "You saw a building and did not know how to get in. You managed to search around some more but it got so cold you couldn't even walk.";
             p2.innerHTML = "You froze to death while searching for the entrance to the building.";
             p3.innerHTML = "";
             b1.innerHTML = "Restart";
-            b2.innerHTML = "";
-
-        }
-
-        function youFroze(){
-            img.src = "images/youFroze.jpeg";
-            p1.innerHTML = "Yoou saw the concrete building, assuming its a prison, but were unable to find the entrance. The temperature. dropped so much so quickly.";
-            p2.innerHTML = "You froze to death searching for entrance.";
-            p2.innerHTML = "";
-            b1.innerHTML = "You died";
-            b2.innerHTML = "Dumb Dumb";
+            b2.style.display = "none";
         }
         
         function pickUpItems(){
@@ -156,6 +154,7 @@
             p3.style.display = "block";
             b1.innerHTML = "Ring";
             b2.innerHTML = "Boots";
+            b2.style.display = "block";
         }
 
         function pickUpRing(){
@@ -168,7 +167,7 @@
         }
 
         function pickUpBoots(){
-            img.src = "images/longdarkhallway.jpg";
+            img.src. = "images/longdarkhallway.jpg";
             p1.innerHTML = "With your now aquired item, you proceed to follow Tommy into the hallway where it gets darker and darker every step. He leads you to a fork in the road and gestures you to choose which way.";
             p2.innerHTML = "";
             p3.innerHTML = "Do you go left or right?";
@@ -176,7 +175,35 @@
             b2.innerHTML = "Right";
         }
 
-        function goLeft(){
+        function leftWithRing(){
+            img.src = "images/quicksand.jpg";
+            p1.innerHTML = "";
+            p2.innerHTML = "You see gurgling quicksand in the room! Quick! Go back to the hallway! Fast!";
+            p2.innerHTML = "";
+            b1.innerHTML = "Back to hallway!";
+            b2.style.display = "none";
+        }
+
+        function leftWithBoots(){
+            img.src = "images/quicksan.jpg";
+            p1.innerHTML = "";
+            p2.innerHTML = "As you entered the room you felt a goop envelope your entire shoe. You're sinking into quicksand and can't get the boots off!";
+            p3.innerHTML = "You're beginning to panic, do you try to take the boots off yourslef or do you ask Tommy to help you?";
+            b1.innerHTML = "Get them off myself now!";
+            b2.innerHTML = "Tommy, please help me!";
+            b2.style.display = "block";
+        }
+
+        function getThemOffMyself(){
+            img.src = ""
+            p1.innerHTML = "Well, Addilyn, you tried your best to get them off but they were a little too snug. You sink further and further into the sand. ";
+            p2.innerHTML = "Tommy can't help you anymore, you've been getting on his nerves the whole time. You drowned in quicksand. ";
+            p2.innerHTML = "";
+            b1.innerHTML = "Restart";
+            b2.innerHTML = "";
+        }
+
+        function askTommy(){
             img.src = "";
             p1.innerHTML = "";
             p2.innerHTML = "";
@@ -185,14 +212,7 @@
             b2.innerHTML = "";
         }
 
-        function goRight(){
-            img.src = "";
-            p1.innerHTML = "";
-            p2.innerHTML = "";
-            p2.innerHTML = "";
-            b1.innerHTML = "";
-            b2.innerHTML = "";
-        }
+
 
         // State Machine
         function bclick(button){
@@ -208,18 +228,16 @@
                     state = "pickUpItems";
                 }
             }
-            else if (state == "followTommy") {
+            if (state == "followTommy") {
                 if (button == 2){
                     dontFollowTommy();
                     state = "dontFollowTommy";
                 }
             }
-            else if (state == "dontFollowTommy"){
-                if (button == 1){
-                    youFroze();
-                    state="youFroze";
-                }
+            if (state == "dontFollowTommy"){
+                if (button == )
             }
+
             else if (state == "pickUpItems") {
                 if (button == 1){
                     pickUpRing();
@@ -230,6 +248,19 @@
                     state = "pickUpBoots";
                 }
             }
+            else if (state == "pickUpRing"){
+                if (button == 1){
+                    ////left
+                    leftWithRing();
+                    state = "leftWithRing";
+                }
+                else if (button == 2){
+                    ////right
+                    right();
+                    state = "right";
+                }
+            }
+
         }
 
     </script>
