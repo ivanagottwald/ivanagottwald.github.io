@@ -1,0 +1,393 @@
+<html><head>
+            <title>Text Adventure</title>
+                <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <style>
+            #container{
+                position:absolute;
+                left:0px;
+                right:0px;
+                top:70px;
+                bottom:0px;
+                background-color:#152238;
+            }
+            #left_pane{
+                background-color:#00121A;
+                height:100%;
+                width:56%;
+                float:left;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            #right_pane{
+                background-color:#00121A;
+                height:100%;
+                width:44%;
+                float:left;
+            }
+            #story_text{
+                text-align:center;
+                height:80%;
+            }
+            #button_choices{
+                height:20%;
+                font:bold;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            #story_img{
+                max-height:97%;
+                max-width:100%;
+                width:auto;
+                height:auto;
+            }
+            .buttons{
+                text-decoration:none;
+                color:white;
+                background-color:black;
+                padding:8px;
+                border-radius:6px;
+                font-size:20px;
+                margin:8px;
+            }
+        </style>
+    </head>
+<body class="background">
+         <link rel="stylesheet" type="text/css" href="css/navbar.css">
+         <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contactme.html">Contact Me</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li class="dropdown">
+                <a href="#">Projects</a>
+                <ul class="dropdown-content">
+                    <li class="active"><a href="textadventure.html">Text Adventure</a></li>
+                    <li><a href="#">Project 1</a></li>
+                    <li><a href="#">Project 1</a></li>
+                    <li><a href="#">Project 1</a></li>
+                    <li><a href="#">Project 1</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+    <div id="container">
+        <div id="left_pane">
+            <img id="story_img" src="images/alcatrazatnight.jpeg">
+        </div>
+        <div id="right_pane">
+            <div id="story_text">
+                <p id="p1">ESCAPE FROM ALCATRAZ</p>
+                <p id="p2">Your name is Addilyn. the year is 1987. You fell asleep safe and sound in your bedroom one night only to wake up on the deck on an empty cruise ship admist the boarding of Alcatraz island -- Alcatraz Federal Penitentiary.<p>
+                <p id="p3">ARE YOU READY TO ESCAPE?</p>
+            </div>
+            <div id="button_choices">
+                <a id="b1" class="buttons" href="#" onclick="bclick(1)">Yes </a>
+                <a id="b2" class="buttons" href="#" onclick="bclick(2)">No</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var b1 = document.getElementById("b1");
+        var b2 = document.getElementById("b2");
+        var img = document.getElementById("story_img");
+        var p1 = document.getElementById("p1");
+        var p2 = document.getElementById("p2");
+        var p3 = document.getElementById("p3");
+        var state = "intro";
+        intro();
+
+        function intro(){
+            img.src = "images/alcatrazatnight.jpeg";
+            b1.innerHTML = "Yes";
+            b2.style.display = "none";
+            p1.innerHTML = "ESCAPE FROM ALCATRAZ";
+            p2.innerHTML = "Your name is Addilyn. the year is 1987. You fell asleep safe and sound in your bedroom one night only to wake up on the deck on an empty cruise ship admist the boarding of Alcatraz island -- Alcatraz Federal Penitentiary.";
+            p3.innerHTML = "ARE YOU READY TO ESCAPE";
+        }
+        function followTommy(){
+            img.src = "images/tommy.jpeg";
+            p1.innerHTML = "";
+            p2.innerHTML = "Your teeth chatter while you begin to shiver as cold winds send chills up your spine. It's cold. You open your eyes and see a strangely familiar boy named Tommy.";
+            p3.innerHTML = "Would you like to follow Tommy?";
+            b1.innerHTML = "Yes, I don't know where I am.";
+            b2.innerHTML = "No, I'd rather look around the island myself.";
+            b2.style.display = "block";
+        }
+        function dontFollowTommy(){
+            img.src = "images/forest.jpeg";
+            p1.innerHTML = "You saw a building and did not know how to get in. Temperatures dropped drastically. You managed to search around some more but it got so cold you couldn't even walk.";
+            p2.innerHTML = "You froze to death while searching for the entrance to the building.";
+            p3.innerHTML = "";
+            b1.innerHTML = "Restart";
+            b2.style.display = "none";
+        }
+        function pickUpItems(){
+            img.src="images/hallway.jpg";
+            p1.innerHTML = "Tommy led you to a building where you both entered into a scary, dark, ominous hallway. There is a white paper that you pick up off the ground that reads, ";
+            p2.innerHTML = " ''In time of suffering one needs to travel far and away, but in time of suffering one must have wealth to move forward.'''";
+            p3.innerHTML = "You're confused as you set the paper back down on the floor because there are now ghostly items. You see a gold ring and a pair of leather boots. Do you take the ring or the boots?";
+            b1.innerHTML = "Gold Ring";
+            b2.innerHTML = "Leather Boots";
+            b2.style.display = "block";
+        }
+        function pickUpRing(){
+            img.src="images/longdarkhallway.jpg";
+            p1.innerHTML = "With your now acquired, shiny gold ring, Tommy leads you down another hallway. After walking and walking your feet are getting cold, but at least you have a pretty ring, right? You keep following him, despite with every step it seems to get darker and darker. He led you to a fork in the road and you feel a pit in your stomach. ";
+            p2.innerHTML = "Which way would you like to go?";
+            p3.innerHTML = "";
+            b1.innerHTML = "Left";
+            b2.innerHTML = "Right";
+            b2.style.display = "block";
+        }
+        function pickUpBoots(){
+            img.src="images/longdarkhallway.jpg";
+            p1.innerHTML = "With your now acquired leather boots you feel as though you could walk for miles. After walking and walking, Tommy leads you down another hallway. You keep following him, despite with every step it seems to get darker and darker. He led you to a fork in the road and you feel a pit in your stomach. ";
+            p2.innerHTML = "Which way would you like to go?";
+            p3.innerHTML = "";
+            b1.innerHTML = "Left";
+            b2.innerHTML = "Right";
+        }
+        function goLeft(){
+            img.src="images/quicksand.jpg";
+            p1.innerHTML = "";
+            p2.innerHTML = "You see gurgling quicksand in the room! Quick! Turn around and go back to the hallway and go right!";
+            p3.innerHTML = "";
+            b1.innerHTML = "Turn around now!!";
+            b2.style.display = "none";
+        }
+        function goRight(){
+            img.src="images/woodendoor.jpeg";
+            p1.innerHTML = "Tommy leads you to a new room, with a wooden door blocking your way. You're confused. The door reads, ''I've always enjoyed the taste of riches. Use the string to your best capability. ''";
+            p2.innerHTML = "Tommy helps you out. He says that you need to pick the lock with the gold ring by attaching the string to it so you can take the ring back out and keep it. ";
+            p3.innerHTML = "Do you have the ring?";
+            b1.innerHTML = "Yes, I have the ring. ";
+            b2.innerHTML = "No, I'm wearing the boots";
+            b2.style.display = "block";
+        }
+        function drownedWithBoots(){
+            img.src="images/diedinquicksand.jpeg";
+            p1.innerHTML = "You stepped in quicksand and are now sinking! You tried your best to pried the boots off and so did tommy but to no avail.";
+            p2.innerHTML = "You slowly sunk to your death in the quicksand.";
+            p3.innerHTML = "";
+            b1.innerHTML = "Restart";
+            b2.style.display = "none";
+        }
+        
+        function answerTommysRiddleforRing(){
+            img.src="images/riddle.jpeg";
+            p1.innerHTML = "";
+            p2.innerHTML = "'Oh, you have the ring? You need to answer the riddle to move forward. He seems really serious about this question, it is about his favorite book of all time. ";
+            p3.innerHTML = "''What mythological creature is the novel Frankenstein based off of?''";
+            b1.innerHTML = "Nyx, Goddess of the night who emerged as the dawn of creation.";
+            b2.innerHTML = "Prometheus, a God of Fire associated with the creation of mortals.";
+            b2.style.display = "block';"
+        }
+
+        function answerRiddlewithoutRing(){
+            img.src="images/riddle.jpeg";
+            p1.innerHTML = "";
+            p2.innerHTML = "Without the ring you'll need to answer Tommy's question correctly so he will give you the ring. He seems really serious about this question, it is about his favorite book of all time. ";
+            p3.innerHTML = "''What mythological creature is the novel Frankenstein based off of?''";
+            b1.innerHTML = "Nyx, Goddess of the night who emerged as the dawn of creation.";
+            b2.innerHTML = "Prometheus, a God of Fire associated with the creation of mortals.";
+        }
+
+        function pickLock(){
+            img.src="images/riddle.jpeg";
+            p1.innerHTML = "You successfully picked the lock of the door and swing it open. In front of you are endless hallways of old, dusty books in a crooked library. Tommy needs you to answer his question to see if you're worthy of moving forward.";
+            p2.innerHTML = "He looks really serious about this questions. He asks, ";
+            p3.innerHTML = "''What mythological creature is the novel Frankenstein based off of?''";
+            b1.innerHTML = "Nyx, Goddess of the night who emerged as the dawn of creation.";
+            b2.innerHTML = "Prometheus, a God of Fire associated with the creation of mortals."
+            b2.style.display = "block";
+        }
+
+        function answeredNyx(){
+            img.src="images/diedinquicksand.jpeg";
+            p1.innerHTML = "";
+            p2.innerHTML = "";
+            p3.innerHTML = "Tommy is disgusted, he secretly leads you back to the fork in the road and forces you ro right, locking you in the quick sand room where you eventually suffocate";
+            b1.innerHTML = "Restart";
+            b2.style.display = "none";
+        }
+
+        function answeredCorrectly(){
+            img.src="images/spade.jpg";
+            p1.innerHTML = "Tommy is ecstatic that you were able to answer correctly so he takes you to the enchantment room where you meet Spade, the snobby gatekeeper. You get the feeling Spadae is a trickster and loves sarcasm.";
+            p2.innerHTML = "You get the feeling Spade is a trickster and loves sarcasm.";
+            p3.innerHTML = "He's in awe, ''Ooh la la Tommy, you got me a good one.  Are you interested in going home little one?'' he asks you.";
+            b1.innerHTML = "Are we not already home?";
+            b2.innerHTML = "I actually am starting to like this place.";
+            b2.style.displaay = "block";
+        }
+
+        function aboardShipToGoHome(){
+            img.src="images/cruiseship.jpg";
+            p1.innerHTML = "Spade sees your wit and intellect within you. You answered correctly and he chuckled and the walls behind him fall down to reveal the cruise ship you were initially brought here on. You look back at Tommy and grin just before you sprint off back onto the deck. ";
+            p2.innerHTML = "Tommy is disspointed, he wanted you to stay since he hasn't had a visitor in a long time. Spade is happy you were able to reach his level without dying first, no ones done that before. ";
+            p3.innerHTML = "Congratulations! You get to go home and back to your beloved family. Thank you for playing and I hope you enjoyed this dangerous game. :) ";
+            b1.innerHTML = "Congrats!";
+            b2.style.display = "none";
+        }
+
+        function stuckOnIsland (){
+            img.src="images/diedinquicksand.jpeg";
+            p1.innerHTML = "";
+            p2.innerHTML = "Tommy is disgusted, he secretly leads you back to the fork in the road and forces you to the quicksand room. Even without the boots you'll sit there and starve.";
+            p3.innerHTML = "Spade and Tommy have left you for dead.";
+            b1.innerHTML = "Restart";
+            b2.style.display = "none";
+        }
+
+
+        //////State Machine
+        function bclick (button){
+            if (state == "intro"){
+                if (button == 1){
+                    followTommy();
+                    state ="followTommy";
+                }
+            }
+            else if(state == "followTommy"){
+                if (button == 1){
+                    pickUpItems();
+                    state = "pickUpItems";
+                }
+                else if(button == 2){
+                    dontFollowTommy();
+                    state="dontFollowTommy";
+                }
+            }
+            //died
+            else if(state == "dontFollowTommy"){
+                if (button == 1){
+                    intro();
+                    state = "intro";
+                }
+            }
+            else if(state == "pickUpItems"){
+                if (button == 1){
+                    pickUpRing();
+                    state = "pickUpRing";
+                }
+                else if (button == 2){
+                    pickUpBoots();
+                    state="pickUpBoots";
+                }
+            }
+            else if(state == "pickUpRing"){
+                if (button == 1){
+                    goLeft();
+                    state = "goLeft";
+                }
+                else if (button == 2){
+                    goRight();
+                    state="goRight";
+                }
+            }
+            else if (state == "goLeft"){
+                if (button == 1){
+                    pickUpRing();
+                    state = "pickUpRing";
+                }
+            }
+            else if (state == "leftWithBoots"){
+                if (button == 1){
+                    intro();
+                    state = "intro";
+                }
+            }
+            else if (state == "pickUpBoots"){
+                if (button == 1){
+                    drownedWithBoots();
+                    state = "drownedWithBoots";
+                }
+                if (button ==2){
+                    goRight();
+                    state = "goRight";
+                }
+            }
+            else if (state == "drownedWithBoots"){
+                if (button == 1){
+                    intro();
+                    state = "intro";
+                }
+            }
+            else if (state == "goRight"){
+                if (button == 1){
+                    answerTommysRiddleforRing();
+                    state = "answerTommysRiddleforRing";
+                }
+                else if (button == 2){
+                    answerRiddlewithoutRing();
+                    state="answerRiddlewithoutRing";
+                }
+            }
+            else if (state == "pickLock"){
+                //die
+                if (button == 1){
+                    answeredNyx();
+                    state = "answeredNyx";
+                }
+                else if (button == 2){
+                    answeredCorrectly();
+                    state="answeredCorrectly(";
+                }
+            }
+            else if (state == "answerTommysRiddleforRing"){
+                //die
+                if (button == 1){
+                    answeredNyx();
+                    state = "answeredNyx";
+                }
+                else if (button == 2){
+                    answeredCorrectly();
+                    state="answeredCorrectly";
+                }
+            }
+            else if (state == "answerRiddlewithoutRing"){
+                //die
+                if(button == 1){
+                    answeredNyx();
+                    state = "answeredNyx";
+                }
+                else if (button == 2){
+                    answeredCorrectly();
+                    state ="answeredCorrectly";
+                }
+            }
+            else if (state == "answeredNyx"){
+                if(button == 1){
+                    intro();
+                    state = "intro";
+                }
+            }
+            else if (state == "answeredCorrectly"){
+                if(button == 1){
+                    aboardShipToGoHome();
+                    state = "aboardShipToGoHome";
+                }
+                else if (button == 2){
+                    stuckOnIsland();
+                    state ="stuckOnIsland";
+                }
+            }
+            else if (state == "stuckOnIsland"){
+                if(button == 1){
+                    intro();
+                    state = "intro";
+                }
+            }
+            else if (state == "aboardShipToGoHome"){
+                if(button == 1){
+                    intro();
+                    state = "intro";
+                }
+            }
+        }
+    </script>
+    
+</body></html>
+
