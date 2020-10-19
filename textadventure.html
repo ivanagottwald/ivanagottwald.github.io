@@ -32,7 +32,8 @@
             }
             #story_text{
                 text-align:center;
-                height:80%;
+                height:60%;
+                font-size: 20px;
             }
             #button_choices{
                 height:20%;
@@ -84,7 +85,7 @@
         <div id="right_pane">
             <div id="story_text">
                 <p id="p1">ESCAPE FROM ALCATRAZ</p>
-                <p id="p2">Your name is Addilyn. the year is 1987. You fell asleep safe and sound in your bedroom one night only to wake up on the deck on an empty cruise ship admist the boarding of Alcatraz island -- Alcatraz Federal Penitentiary.<p>
+                <p id="p2">Your name is Addilyn. The year is 1987. You fell asleep safe and sound in your bedroom one night only to wake up on the deck on an empty cruise ship admist the boarding of Alcatraz island -- Alcatraz Federal Penitentiary. <p>
                 <p id="p3">ARE YOU READY TO ESCAPE?</p>
             </div>
             <div id="button_choices">
@@ -108,13 +109,13 @@
             b1.innerHTML = "Yes";
             b2.style.display = "none";
             p1.innerHTML = "ESCAPE FROM ALCATRAZ";
-            p2.innerHTML = "Your name is Addilyn. the year is 1987. You fell asleep safe and sound in your bedroom one night only to wake up on the deck on an empty cruise ship admist the boarding of Alcatraz island -- Alcatraz Federal Penitentiary.";
+            p2.innerHTML = "Young Addilyn of Long Island, New York fell asleep safe and sound in her bedroom late one night, only to wake up on the deck of an empty cruise ship amidst the boarding of Alcatraz Island -- Alcatraz Federal Penitentiary. She was kidnapped! Unwilling to disembark, Addilyn is forced onto the island by a crewman where she discovers a comforting prescence. The daunting journey back home involves a scavenger hunt to lead you back to  the ship. Addilyn begins to rely on Tommy and finds comfort in his presence. Little does Addilyn know, Tommy hides the clues and he hasn’t had a visitor in a long time. Eleven year old Addilyn has to come to terms with her new “friends” evil nature and escape him before she escapes the island. You're Addilyn.";
             p3.innerHTML = "ARE YOU READY TO ESCAPE";
         }
         function followTommy(){
             img.src = "images/tommy.jpeg";
-            p1.innerHTML = "";
-            p2.innerHTML = "Your teeth chatter while you begin to shiver as cold winds send chills up your spine. It's cold. You open your eyes and see a strangely familiar boy named Tommy.";
+            p1.innerHTML = "You're alone, dark, and scared. What are you going to do? Where are your parents? You must find out.";
+            p2.innerHTML = "A sudden cold wind send chills up your spine and your teeth begin to chatter. You're so so cold. You sparatically look through the fog for even the slighest hint as to what to do. You see a strangely familiar boy named Tommy. What is he doing out here??";
             p3.innerHTML = "Would you like to follow Tommy?";
             b1.innerHTML = "Yes, I don't know where I am.";
             b2.innerHTML = "No, I'd rather look around the island myself.";
@@ -122,7 +123,7 @@
         }
         function dontFollowTommy(){
             img.src = "images/forest.jpeg";
-            p1.innerHTML = "You saw a building and did not know how to get in. Temperatures dropped drastically. You managed to search around some more but it got so cold you couldn't even walk.";
+            p1.innerHTML = "So you decided not to follow Tommy. You see a building and frantically tried to find an entrance. Temperatures dropped drastically. You managed to search around some more but have wasted all your energy. It got so cold you couldn't even walk anymore.";
             p2.innerHTML = "You froze to death while searching for the entrance to the building.";
             p3.innerHTML = "";
             b1.innerHTML = "Restart";
@@ -130,42 +131,42 @@
         }
         function pickUpItems(){
             img.src="images/hallway.jpg";
-            p1.innerHTML = "Tommy led you to a building where you both entered into a scary, dark, ominous hallway. There is a white paper that you pick up off the ground that reads, ";
+            p1.innerHTML = "This weird boy Tommy led you to a huge concrete building. It's the prison. You both enter into a scary, dark, and ominous hallway. you curiously pick up off the ground that a crinkled white paper that reads, ";
             p2.innerHTML = " ''In time of suffering one needs to travel far and away, but in time of suffering one must have wealth to move forward.'''";
-            p3.innerHTML = "You're confused as you set the paper back down on the floor because there are now ghostly items. You see a gold ring and a pair of leather boots. Do you take the ring or the boots?";
+            p3.innerHTML = "You're confused and set the paper back down on the floor, but you noticed that there are now items on the floor that weren't there before. You see a gold ring and a pair of leather boots. Do you take the ring or the boots?";
             b1.innerHTML = "Gold Ring";
             b2.innerHTML = "Leather Boots";
             b2.style.display = "block";
         }
         function pickUpRing(){
             img.src="images/longdarkhallway.jpg";
-            p1.innerHTML = "With your now acquired, shiny gold ring, Tommy leads you down another hallway. After walking and walking your feet are getting cold, but at least you have a pretty ring, right? You keep following him, despite with every step it seems to get darker and darker. He led you to a fork in the road and you feel a pit in your stomach. ";
-            p2.innerHTML = "Which way would you like to go?";
-            p3.innerHTML = "";
+            p1.innerHTML = "";
+            p2.innerHTML = "With your now acquired, shiny gold ring, Tommy leads you down another hallway.  After walking and walking your feet are getting cold, but at least you have a pretty ring, right? You keep following him, despite with every step it seems to get darker and darker. He led you to a fork in the road and you feel a pit in your stomach. ";
+            p3.innerHTML = "Which way would you like to go?";
             b1.innerHTML = "Left";
             b2.innerHTML = "Right";
             b2.style.display = "block";
         }
         function pickUpBoots(){
             img.src="images/longdarkhallway.jpg";
-            p1.innerHTML = "With your now acquired leather boots you feel as though you could walk for miles. After walking and walking, Tommy leads you down another hallway. You keep following him, despite with every step it seems to get darker and darker. He led you to a fork in the road and you feel a pit in your stomach. ";
-            p2.innerHTML = "Which way would you like to go?";
-            p3.innerHTML = "";
+            p1.innerHTML = "With your now acquired leather boots you feel as though you could walk for miles. After walking and walking, Tommy leads you down another weird hallway. You keep following him despite with every step it seems to get darker and darker. He led you to a fork in the road and you feel a pit in your stomach. ";
+            p2.innerHTML = "You have no idea where. you are or what to do. Tommy lets you decide.";
+            p3.innerHTML = "Which way would you like to go?";
             b1.innerHTML = "Left";
             b2.innerHTML = "Right";
         }
         function goLeft(){
             img.src="images/quicksand.jpg";
             p1.innerHTML = "";
-            p2.innerHTML = "You see gurgling quicksand in the room! Quick! Turn around and go back to the hallway and go right!";
+            p2.innerHTML = "You chose the wrong way! There is gurgling quicksand everywhere in the room and. you have no option but to leave! Quick! Turn around, go back to the hallway and go right!";
             p3.innerHTML = "";
             b1.innerHTML = "Turn around now!!";
             b2.style.display = "none";
         }
         function goRight(){
             img.src="images/woodendoor.jpeg";
-            p1.innerHTML = "Tommy leads you to a new room, with a wooden door blocking your way. You're confused. The door reads, ''I've always enjoyed the taste of riches. Use the string to your best capability. ''";
-            p2.innerHTML = "Tommy helps you out. He says that you need to pick the lock with the gold ring by attaching the string to it so you can take the ring back out and keep it. ";
+            p1.innerHTML = "Tommy leads you to a new room, with a wooden door blocking your way. You're confused and have no idea where this giant wooden door came from. The door reads, ''I've always enjoyed the taste of riches. Use the string to your best capability. ''";
+            p2.innerHTML = "Tommy gives you a hint. He says that you need to pick the lock with the gold ring by tying the string to it so you can take the ring back out and keep it with you. ";
             p3.innerHTML = "Do you have the ring?";
             b1.innerHTML = "Yes, I have the ring. ";
             b2.innerHTML = "No, I'm wearing the boots";
@@ -173,9 +174,9 @@
         }
         function drownedWithBoots(){
             img.src="images/diedinquicksand.jpeg";
-            p1.innerHTML = "You stepped in quicksand and are now sinking! You tried your best to pried the boots off and so did tommy but to no avail.";
+            p1.innerHTML = "You stepped in quicksand and are now sinking! You tried your best to pry the boots off and so did Tommy but to no avail.";
             p2.innerHTML = "You slowly sunk to your death in the quicksand.";
-            p3.innerHTML = "";
+            p3.innerHTML = ":)";
             b1.innerHTML = "Restart";
             b2.style.display = "none";
         }
@@ -183,7 +184,7 @@
         function answerTommysRiddleforRing(){
             img.src="images/riddle.jpeg";
             p1.innerHTML = "";
-            p2.innerHTML = "'Oh, you have the ring? You need to answer the riddle to move forward. He seems really serious about this question, it is about his favorite book of all time. ";
+            p2.innerHTML = "'Oh, you have the ring? You need to answer the riddle to move forward. Tommy seems really serious about this question, like it is life or death or something. It is about his favorite book of all time. One of the classics. how could you not know the answer? He asks, ";
             p3.innerHTML = "''What mythological creature is the novel Frankenstein based off of?''";
             b1.innerHTML = "Nyx, Goddess of the night who emerged as the dawn of creation.";
             b2.innerHTML = "Prometheus, a God of Fire associated with the creation of mortals.";
@@ -193,7 +194,7 @@
         function answerRiddlewithoutRing(){
             img.src="images/riddle.jpeg";
             p1.innerHTML = "";
-            p2.innerHTML = "Without the ring you'll need to answer Tommy's question correctly so he will give you the ring. He seems really serious about this question, it is about his favorite book of all time. ";
+            p2.innerHTML = "Without the ring you'll need to answer Tommy's question correctly so he will give you the ring. Tommy  seems really serious about this question, like it is life or death or something. It is about his favorite book of all time. A classic. You. should know the answer. ";
             p3.innerHTML = "''What mythological creature is the novel Frankenstein based off of?''";
             b1.innerHTML = "Nyx, Goddess of the night who emerged as the dawn of creation.";
             b2.innerHTML = "Prometheus, a God of Fire associated with the creation of mortals.";
@@ -201,8 +202,8 @@
 
         function pickLock(){
             img.src="images/riddle.jpeg";
-            p1.innerHTML = "You successfully picked the lock of the door and swing it open. In front of you are endless hallways of old, dusty books in a crooked library. Tommy needs you to answer his question to see if you're worthy of moving forward.";
-            p2.innerHTML = "He looks really serious about this questions. He asks, ";
+            p1.innerHTML = "You successfully picked the lock of the door and it swings it open. It revelas a library of endless old, dusty, and smelly books. You keep walking and walking through the libraary, following Tommy of course. He keeps speeding up his pace like he doesn't like the library or something. Tommy needs you to answer his question to see if you're worthy of moving forward and so you two can get out of the library room.";
+            p2.innerHTML = "He looks really serious about this question, like it is life or death. He asks, ";
             p3.innerHTML = "''What mythological creature is the novel Frankenstein based off of?''";
             b1.innerHTML = "Nyx, Goddess of the night who emerged as the dawn of creation.";
             b2.innerHTML = "Prometheus, a God of Fire associated with the creation of mortals."
@@ -213,16 +214,16 @@
             img.src="images/diedinquicksand.jpeg";
             p1.innerHTML = "";
             p2.innerHTML = "";
-            p3.innerHTML = "Tommy is disgusted, he secretly leads you back to the fork in the road and forces you ro right, locking you in the quick sand room where you eventually suffocate";
+            p3.innerHTML = "Wrong! How did you not know the answer? It was Prometheus, everyone knows that. You were taken back to the fork in the road and forced you ro right locking you in the quick sand room forever. Looks like you won't be seeing your family anytime soon.";
             b1.innerHTML = "Restart";
             b2.style.display = "none";
         }
 
         function answeredCorrectly(){
             img.src="images/spade.jpg";
-            p1.innerHTML = "Tommy is ecstatic that you were able to answer correctly so he takes you to the enchantment room where you meet Spade, the snobby gatekeeper. You get the feeling Spadae is a trickster and loves sarcasm.";
-            p2.innerHTML = "You get the feeling Spade is a trickster and loves sarcasm.";
-            p3.innerHTML = "He's in awe, ''Ooh la la Tommy, you got me a good one.  Are you interested in going home little one?'' he asks you.";
+            p1.innerHTML = "Tommy is ecstatic that you were able to answer correctly and the library walls dissapear. You're now in the enchantment room where you meet Spade, the snobby gatekeeper, the one things preventing you from getting to that cruise ship. You get the feeling Spade is a trickster and loves sarcasm, though, just by his snobby attitude.";
+            p2.innerHTML = "";
+            p3.innerHTML = "He's in awe, ''Ooh la la Tommy, you got me a good one. Are you interested in going home little one?'' he asks you.";
             b1.innerHTML = "Are we not already home?";
             b2.innerHTML = "I actually am starting to like this place.";
             b2.style.displaay = "block";
@@ -230,7 +231,7 @@
 
         function aboardShipToGoHome(){
             img.src="images/cruiseship.jpg";
-            p1.innerHTML = "Spade sees your wit and intellect within you. You answered correctly and he chuckled and the walls behind him fall down to reveal the cruise ship you were initially brought here on. You look back at Tommy and grin just before you sprint off back onto the deck. ";
+            p1.innerHTML = "Spade sees your wit and intellect within you. You chose the right answer! He chuckles as the walls behind him fall down to reveal the cruise ship you were initially brought here on. You look back at Tommy and grin just before you sprint off back onto the deck. ";
             p2.innerHTML = "Tommy is disspointed, he wanted you to stay since he hasn't had a visitor in a long time. Spade is happy you were able to reach his level without dying first, no ones done that before. ";
             p3.innerHTML = "Congratulations! You get to go home and back to your beloved family. Thank you for playing and I hope you enjoyed this dangerous game. :) ";
             b1.innerHTML = "Congrats!";
@@ -240,7 +241,7 @@
         function stuckOnIsland (){
             img.src="images/diedinquicksand.jpeg";
             p1.innerHTML = "";
-            p2.innerHTML = "Tommy is disgusted, he secretly leads you back to the fork in the road and forces you to the quicksand room. Even without the boots you'll sit there and starve.";
+            p2.innerHTML = "Wrong! How did you not know the answer? It was Prometheus, everyone knows that. You were taken back to the fork in the road and forced you ro right locking you in the quick sand room forever. Looks like you won't be seeing your family anytime soon.";
             p3.innerHTML = "Spade and Tommy have left you for dead.";
             b1.innerHTML = "Restart";
             b2.style.display = "none";
